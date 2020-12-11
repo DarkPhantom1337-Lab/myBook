@@ -1,0 +1,9 @@
+name: myBook
+version: 1.0.0
+author: DarkPhantom1337
+description: EnderLicense plugin for version 1.16.x
+main: ua.darkphantom1337.mybook.Main
+api-version: 1.16
+commands:
+  mybook:
+    aliases: [mb]
