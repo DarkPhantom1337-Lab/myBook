@@ -21,20 +21,20 @@ public class MyBookCMD implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (!sender.hasPermission("myBook.admin")) {
-			sender.sendMessage("§c[§emyBook§c] §f-> §cУ вас нет доступа к данной команде!");
+			sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cРЈ РІР°СЃ РЅРµС‚ РґРѕСЃС‚СѓРїР° Рє РґР°РЅРЅРѕР№ РєРѕРјР°РЅРґРµ!");
 			return false;
 		}
 		if (args.length == 0 && sender instanceof Player) {
-			sender.sendMessage("§aКоманды плагина myBook:"
-					+ "\n§7- /myBook save <id> - §fсохранение завершенной книги которая у Вас в руке в общее хранилище книг. "
-					+ "\n§7- /myBook save <id> <author> - §fсохранение завершенной книги которая у Вас в руке в общее хранилище книг. Оригинальный автор книги будет изменён.;"
-					+ "\n§7- /myBook edit <id> - §fполучение доступной для редактирования книги; "
-					+ "\n§7- /myBook get <id> - §fполучение нередактируемой книги; "
-					+ "\n§7- /myBook delete <id> - §fудаление из хранилища сохраненной книги; "
-					+ "\n§7- /myBook list - §fсписок имеющихся в хранилище книг; "
-					+ "\n§7- /myBook blank - §fполучение пустой, готовой для написания книги;"
-					+ "\n§7- /myBook cedit (currentedit) - §fвозможность превратить в редактируемую уже завершенную книгу, находящуюся в руке;"
-					+ "\n§7- /myBook version - §fполучение пустой, готовой для написания книги;");
+			sender.sendMessage("В§aРљРѕРјР°РЅРґС‹ РїР»Р°РіРёРЅР° myBook:"
+					+ "\nВ§7- /myBook save <id> - В§fСЃРѕС…СЂР°РЅРµРЅРёРµ Р·Р°РІРµСЂС€РµРЅРЅРѕР№ РєРЅРёРіРё РєРѕС‚РѕСЂР°СЏ Сѓ Р’Р°СЃ РІ СЂСѓРєРµ РІ РѕР±С‰РµРµ С…СЂР°РЅРёР»РёС‰Рµ РєРЅРёРі. "
+					+ "\nВ§7- /myBook save <id> <author> - В§fСЃРѕС…СЂР°РЅРµРЅРёРµ Р·Р°РІРµСЂС€РµРЅРЅРѕР№ РєРЅРёРіРё РєРѕС‚РѕСЂР°СЏ Сѓ Р’Р°СЃ РІ СЂСѓРєРµ РІ РѕР±С‰РµРµ С…СЂР°РЅРёР»РёС‰Рµ РєРЅРёРі. РћСЂРёРіРёРЅР°Р»СЊРЅС‹Р№ Р°РІС‚РѕСЂ РєРЅРёРіРё Р±СѓРґРµС‚ РёР·РјРµРЅС‘РЅ.;"
+					+ "\nВ§7- /myBook edit <id> - В§fРїРѕР»СѓС‡РµРЅРёРµ РґРѕСЃС‚СѓРїРЅРѕР№ РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РєРЅРёРіРё; "
+					+ "\nВ§7- /myBook get <id> - В§fРїРѕР»СѓС‡РµРЅРёРµ РЅРµСЂРµРґР°РєС‚РёСЂСѓРµРјРѕР№ РєРЅРёРіРё; "
+					+ "\nВ§7- /myBook delete <id> - В§fСѓРґР°Р»РµРЅРёРµ РёР· С…СЂР°РЅРёР»РёС‰Р° СЃРѕС…СЂР°РЅРµРЅРЅРѕР№ РєРЅРёРіРё; "
+					+ "\nВ§7- /myBook list - В§fСЃРїРёСЃРѕРє РёРјРµСЋС‰РёС…СЃСЏ РІ С…СЂР°РЅРёР»РёС‰Рµ РєРЅРёРі; "
+					+ "\nВ§7- /myBook blank - В§fРїРѕР»СѓС‡РµРЅРёРµ РїСѓСЃС‚РѕР№, РіРѕС‚РѕРІРѕР№ РґР»СЏ РЅР°РїРёСЃР°РЅРёСЏ РєРЅРёРіРё;"
+					+ "\nВ§7- /myBook cedit (currentedit) - В§fРІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РїСЂРµРІСЂР°С‚РёС‚СЊ РІ СЂРµРґР°РєС‚РёСЂСѓРµРјСѓСЋ СѓР¶Рµ Р·Р°РІРµСЂС€РµРЅРЅСѓСЋ РєРЅРёРіСѓ, РЅР°С…РѕРґСЏС‰СѓСЋСЃСЏ РІ СЂСѓРєРµ;"
+					+ "\nВ§7- /myBook version - В§fРїРѕР»СѓС‡РµРЅРёРµ РїСѓСЃС‚РѕР№, РіРѕС‚РѕРІРѕР№ РґР»СЏ РЅР°РїРёСЃР°РЅРёСЏ РєРЅРёРіРё;");
 			return true;
 		}
 		if (args.length == 1) {
@@ -42,22 +42,22 @@ public class MyBookCMD implements CommandExecutor {
 				try {
 					File booksdir = new File(plugin.getDataFolder() + File.separator + "Books");
 					if (!booksdir.exists()) {
-						sender.sendMessage("§a[§emyBook§a] §f-> §aВ хранилище ещё нету книг!");
+						sender.sendMessage("В§a[В§emyBookВ§a] В§f-> В§aР’ С…СЂР°РЅРёР»РёС‰Рµ РµС‰С‘ РЅРµС‚Сѓ РєРЅРёРі!");
 						return false;
 					}
 					File[] files = booksdir.listFiles();
-					String allinfo = "§a[§emyBook§a] §f-> §aКниг в хранилище: §e" + files.length;
+					String allinfo = "В§a[В§emyBookВ§a] В§f-> В§aРљРЅРёРі РІ С…СЂР°РЅРёР»РёС‰Рµ: В§e" + files.length;
 					if (files.length == 0) {
-						sender.sendMessage("§a[§emyBook§a] §f-> §aВ хранилище ещё нету книг!");
+						sender.sendMessage("В§a[В§emyBookВ§a] В§f-> В§aР’ С…СЂР°РЅРёР»РёС‰Рµ РµС‰С‘ РЅРµС‚Сѓ РєРЅРёРі!");
 						return false;
 					}
 					for (File f : files) 
-						allinfo += "\n§7- §e" + f.getName().replaceAll(".yml", "");
+						allinfo += "\nВ§7- В§e" + f.getName().replaceAll(".yml", "");
 					sender.sendMessage(allinfo);
 					return true;
 				} catch (Exception e) {
-					sender.sendMessage("§c[§emyBook§c] §f-> §cОшибка при выводе полного списка книг в хранилище."
-							+ "\n§cОшибка: §e" + e.getLocalizedMessage());
+					sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cРћС€РёР±РєР° РїСЂРё РІС‹РІРѕРґРµ РїРѕР»РЅРѕРіРѕ СЃРїРёСЃРєР° РєРЅРёРі РІ С…СЂР°РЅРёР»РёС‰Рµ."
+							+ "\nВ§cРћС€РёР±РєР°: В§e" + e.getLocalizedMessage());
 					return false;
 				}
 			}
@@ -65,15 +65,15 @@ public class MyBookCMD implements CommandExecutor {
 				if (sender instanceof Player) {
 					try {
 						((Player) sender).getInventory().addItem(new ItemStack(Material.WRITABLE_BOOK, 1));
-						sender.sendMessage("§a[§emyBook§a] §f-> §aВам выдана пустая книга.");
+						sender.sendMessage("В§a[В§emyBookВ§a] В§f-> В§aР’Р°Рј РІС‹РґР°РЅР° РїСѓСЃС‚Р°СЏ РєРЅРёРіР°.");
 						return true;
 					} catch (Exception e) {
-						sender.sendMessage("§c[§emyBook§c] §f-> §cОшибка при выдаче пустой книги." + "\n§cОшибка: §e"
+						sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cРћС€РёР±РєР° РїСЂРё РІС‹РґР°С‡Рµ РїСѓСЃС‚РѕР№ РєРЅРёРіРё." + "\nВ§cРћС€РёР±РєР°: В§e"
 								+ e.getLocalizedMessage());
 						return false;
 					}
 				} else {
-					sender.sendMessage("§c[§emyBook§c] §f-> §cДанная команда доступна только игрокам.");
+					sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cР”Р°РЅРЅР°СЏ РєРѕРјР°РЅРґР° РґРѕСЃС‚СѓРїРЅР° С‚РѕР»СЊРєРѕ РёРіСЂРѕРєР°Рј.");
 					return false;
 				}
 			}
@@ -85,25 +85,25 @@ public class MyBookCMD implements CommandExecutor {
 							item.setType(Material.WRITABLE_BOOK);
 							((Player) sender).getInventory().setItemInMainHand(item);
 							sender.sendMessage(
-									"§a[§emyBook§a] §f-> §aКнига в вашей руке успешно обновлена на редактируемую!");
+									"В§a[В§emyBookВ§a] В§f-> В§aРљРЅРёРіР° РІ РІР°С€РµР№ СЂСѓРєРµ СѓСЃРїРµС€РЅРѕ РѕР±РЅРѕРІР»РµРЅР° РЅР° СЂРµРґР°РєС‚РёСЂСѓРµРјСѓСЋ!");
 							return true;
 						} else {
 							sender.sendMessage(
-									"§c[§emyBook§c] §f-> §cЧтобы изменить книгу её нужно держать в главной руке!");
+									"В§c[В§emyBookВ§c] В§f-> В§cР§С‚РѕР±С‹ РёР·РјРµРЅРёС‚СЊ РєРЅРёРіСѓ РµС‘ РЅСѓР¶РЅРѕ РґРµСЂР¶Р°С‚СЊ РІ РіР»Р°РІРЅРѕР№ СЂСѓРєРµ!");
 							return false;
 						}
 					} catch (Exception e) {
-						sender.sendMessage("§c[§emyBook§c] §f-> §cОшибка при создании редактируемой книги."
-								+ "\n§cОшибка: §e" + e.getLocalizedMessage());
+						sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cРћС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё СЂРµРґР°РєС‚РёСЂСѓРµРјРѕР№ РєРЅРёРіРё."
+								+ "\nВ§cРћС€РёР±РєР°: В§e" + e.getLocalizedMessage());
 						return false;
 					}
 				else {
-					sender.sendMessage("§c[§emyBook§c] §f-> §cДанная команда доступна только игрокам.");
+					sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cР”Р°РЅРЅР°СЏ РєРѕРјР°РЅРґР° РґРѕСЃС‚СѓРїРЅР° С‚РѕР»СЊРєРѕ РёРіСЂРѕРєР°Рј.");
 					return false;
 				}
 			}
 			if (args[0].equalsIgnoreCase("version")) {
-				sender.sendMessage("§a[§emyBook§a] §f-> §aВерсия плагина: §e" + plugin.getDescription().getVersion());
+				sender.sendMessage("В§a[В§emyBookВ§a] В§f-> В§aР’РµСЂСЃРёСЏ РїР»Р°РіРёРЅР°: В§e" + plugin.getDescription().getVersion());
 				return true;
 			}
 		}
@@ -119,20 +119,20 @@ public class MyBookCMD implements CommandExecutor {
 							if (args[0].equalsIgnoreCase("edit"))
 								book_item.setType(Material.WRITABLE_BOOK);
 							((Player) sender).getInventory().addItem(book_item);
-							sender.sendMessage("§a[§emyBook§a] §f-> §aВам выдана книга §e" + bookid + "§a!");
+							sender.sendMessage("В§a[В§emyBookВ§a] В§f-> В§aР’Р°Рј РІС‹РґР°РЅР° РєРЅРёРіР° В§e" + bookid + "В§a!");
 							return true;
 						} else {
 							sender.sendMessage(
-									"§c[§emyBook§c] §f-> §cКниги с ID §e" + bookid + " §cещё не существует!");
+									"В§c[В§emyBookВ§c] В§f-> В§cРљРЅРёРіРё СЃ ID В§e" + bookid + " В§cРµС‰С‘ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!");
 							return false;
 						}
 					} catch (Exception e) {
-						sender.sendMessage("§c[§emyBook§c] §f-> §cОшибка при редактировании книги." + "\n§cОшибка: §e"
+						sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cРћС€РёР±РєР° РїСЂРё СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРё РєРЅРёРіРё." + "\nВ§cРћС€РёР±РєР°: В§e"
 								+ e.getLocalizedMessage());
 						return false;
 					}
 				} else {
-					sender.sendMessage("§c[§emyBook§c] §f-> §cДанная команда доступна только игрокам.");
+					sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cР”Р°РЅРЅР°СЏ РєРѕРјР°РЅРґР° РґРѕСЃС‚СѓРїРЅР° С‚РѕР»СЊРєРѕ РёРіСЂРѕРєР°Рј.");
 					return false;
 				}
 			}
@@ -141,14 +141,14 @@ public class MyBookCMD implements CommandExecutor {
 					String bookid = args[1];
 					if (plugin.bookIsExist(bookid)) {
 						new BookFile(plugin, bookid).delete();
-						sender.sendMessage("§a[§emyBook§a] §f-> §aКнига §e" + bookid + "§a удалена!");
+						sender.sendMessage("В§a[В§emyBookВ§a] В§f-> В§aРљРЅРёРіР° В§e" + bookid + "В§a СѓРґР°Р»РµРЅР°!");
 						return true;
 					} else {
-						sender.sendMessage("§c[§emyBook§c] §f-> §cКниги с ID §e" + bookid + " §cещё не существует!");
+						sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cРљРЅРёРіРё СЃ ID В§e" + bookid + " В§cРµС‰С‘ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!");
 						return false;
 					}
 				} catch (Exception e) {
-					sender.sendMessage("§c[§emyBook§c] §f-> §cОшибка при удалении книги." + "\n§cОшибка: §e"
+					sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cРћС€РёР±РєР° РїСЂРё СѓРґР°Р»РµРЅРёРё РєРЅРёРіРё." + "\nВ§cРћС€РёР±РєР°: В§e"
 							+ e.getLocalizedMessage());
 					return false;
 				}
@@ -158,7 +158,7 @@ public class MyBookCMD implements CommandExecutor {
 			if (args[0].equalsIgnoreCase("save"))
 				return saveBook(sender, args);
 
-		sender.sendMessage("§c[§emyBook§c] §f-> §cТакого аргумента не существует либо Вы не указали дополнительные аргументы. Используйте /myBook для справки.");
+		sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cРўР°РєРѕРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ Р»РёР±Рѕ Р’С‹ РЅРµ СѓРєР°Р·Р°Р»Рё РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ Р°СЂРіСѓРјРµРЅС‚С‹. РСЃРїРѕР»СЊР·СѓР№С‚Рµ /myBook РґР»СЏ СЃРїСЂР°РІРєРё.");
 		return false;
 	}
 
@@ -177,21 +177,21 @@ public class MyBookCMD implements CommandExecutor {
 					}
 					new BookFile(plugin, bookid).saveBook(item);
 					if (plugin.bookIsExist(bookid))
-						sender.sendMessage("§a[§emyBook§a] §f-> §aКнига §e" + bookid + " §aуспешно сохранена!");
+						sender.sendMessage("В§a[В§emyBookВ§a] В§f-> В§aРљРЅРёРіР° В§e" + bookid + " В§aСѓСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅРµРЅР°!");
 					else
-						sender.sendMessage("§a[§emyBook§a] §f-> §aКнига §e" + bookid + " §aуспешно обновлена!");
+						sender.sendMessage("В§a[В§emyBookВ§a] В§f-> В§aРљРЅРёРіР° В§e" + bookid + " В§aСѓСЃРїРµС€РЅРѕ РѕР±РЅРѕРІР»РµРЅР°!");
 					return true;
 				} else {
-					sender.sendMessage("§c[§emyBook§c] §f-> §cЧтобы сохранить книгу её нужно держать в главной руке!");
+					sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cР§С‚РѕР±С‹ СЃРѕС…СЂР°РЅРёС‚СЊ РєРЅРёРіСѓ РµС‘ РЅСѓР¶РЅРѕ РґРµСЂР¶Р°С‚СЊ РІ РіР»Р°РІРЅРѕР№ СЂСѓРєРµ!");
 					return false;
 				}
 			} catch (Exception e) {
-				sender.sendMessage("§c[§emyBook§c] §f-> §cОшибка при сохранении книги." + "\n§cОшибка: §e"
+				sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cРћС€РёР±РєР° РїСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё РєРЅРёРіРё." + "\nВ§cРћС€РёР±РєР°: В§e"
 						+ e.getLocalizedMessage());
 				return false;
 			}
 		else {
-			sender.sendMessage("§c[§emyBook§c] §f-> §cДанная команда доступна только игрокам.");
+			sender.sendMessage("В§c[В§emyBookВ§c] В§f-> В§cР”Р°РЅРЅР°СЏ РєРѕРјР°РЅРґР° РґРѕСЃС‚СѓРїРЅР° С‚РѕР»СЊРєРѕ РёРіСЂРѕРєР°Рј.");
 			return false;
 		}
 	}

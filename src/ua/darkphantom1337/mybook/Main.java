@@ -17,10 +17,10 @@ public class Main extends JavaPlugin {
 		try {
 			getCommand("mybook").setExecutor(new MyBookCMD(this));
 			Bukkit.getConsoleSender().sendMessage(
-					"§a[§emyBook§a] §f-> §aPlugin succesfully enabled! // by Darkphantom1337, 2020");
+					"Â§c[Â§emyBookÂ§c] Â§f-> Â§aPlugin succesfully enabled! // by Darkphantom1337, 2020");
 		} catch (Exception e) {
 			Bukkit.getConsoleSender()
-					.sendMessage("§c[§emyBook§c] §f-> §cError in enabling plugin! Plugin disabled!\nError:"
+					.sendMessage("Â§c[Â§emyBookÂ§c] Â§f-> Â§cError in enabling plugin! Plugin disabled!\nError:"
 							+ e.getLocalizedMessage());
 			this.setEnabled(false);
 		}
@@ -28,7 +28,7 @@ public class Main extends JavaPlugin {
 
 	public void onDisable() {
 		Bukkit.getConsoleSender()
-				.sendMessage("§c[§emyBook§c] §f-> §cPlugin succesfully disabled! // by Darkphantom1337, 2020");
+				.sendMessage("Â§c[Â§emyBookÂ§c] Â§f-> Â§cPlugin succesfully disabled! // by Darkphantom1337, 2020");
 	}
 	
 	public Boolean bookIsExist(String bookid) {
